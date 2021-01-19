@@ -1,5 +1,5 @@
 #!/bin/bash
-    DIR_PATH="./nginx"
+    DIR_PATH="nginx"
     CHANGED=`git diff --name-only $GIT_PREVIOUS_COMMIT $GIT_COMMIT $DIR_PATH`
 
     if [ -z "$CHANGED" ]; then
