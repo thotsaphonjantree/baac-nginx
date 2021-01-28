@@ -1,15 +1,20 @@
 pipeline {
     agent any
 
-    stages {
-        stage("Check change"){
-            steps {
-                checkData()
+    try {
+        stages {
+            stage('Check change') {
+                steps {
+                    checkData()
                 // curl -X POST -L --user admin:1172c5c9617d8a9704ec8d3e3638b9c572 https://builder.lessex.company/job/The%20Collector%20Microservice/job/The%20Collector%20Gateway/job/$GIT_BRANCH/build\
+                }
             }
         }
+    } catch (e) {
+        sh 'echo "Hello World"'
     }
 }
-def checkData(){
-    sh "/bin/sh check-data-nginx.sh"
+def checkData() {
+    sh '/bin/sh check-data-nginx.sh'
 }
+ƒ
