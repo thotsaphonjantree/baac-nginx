@@ -9,6 +9,11 @@ pipeline {
             }
         }
     }
+    post {
+        failure {
+            echo 'ERRRRORRRR'
+        }
+    }
 }
 def checkData(){
     sh "/bin/sh check-data-nginx.sh"
