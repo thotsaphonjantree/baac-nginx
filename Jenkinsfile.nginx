@@ -18,7 +18,7 @@ pipeline {
     }
     post {
         failure {
-            """curl -X POST 'https://builder.lessex.company/sounds/playSound?src=file:///home/simple.wav'"""
+            sh """curl -X POST 'https://builder.lessex.company/sounds/playSound?src=file:///home/simple.wav'"""
         }
     }
 }
